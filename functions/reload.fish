@@ -5,7 +5,8 @@ function reload
     end
     
     set -l path (string join '/' $__fish_config_dir $paths)
-    if not test $path[-6..-1] = '.fish'
+
+    if not string match '*.fish' (basename "$path") > /dev/null
         set path "$path.fish"
     end
 
