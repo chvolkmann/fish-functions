@@ -7,15 +7,13 @@ function reload-fish -d "Reloads all .fish config files"
     echo Reloaded $i .fish files in $__fish_config_dir
 end
 
-alias fish-reload="reload-fish"
+
+set repo_root (realpath (dirname (status --current-filename))/..)
 
 function reload-fish-dev -d "Reloads files from fish-functions in development"
-    set repo_root (realpath (dirname (status --current-filename))/..)
-    fisher update $repo_root
-
-    # set i 0
-    # for f in $repo_root/*/**/*.fish
-    #     source $f
-    #     set i (math $i+1)
-    # end
+    fisher update ~/devel/fish-functions
 end
+
+
+alias fish-reload="reload-fish"
+alias fish-reload-dev="reload-fish-dev"
