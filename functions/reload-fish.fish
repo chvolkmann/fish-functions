@@ -1,4 +1,4 @@
-function fish-reload -d "Reloads all .fish config files"
+function reload-fish -d "Reloads all .fish config files"
     set i 0
     for f in $__fish_config_dir/config.fish $__fish_config_dir/conf.d/*.fish $__fish_config_dir/functions/*.fish
         source $f
