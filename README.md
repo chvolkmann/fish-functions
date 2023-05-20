@@ -1,13 +1,11 @@
 # fish-functions
 
-Repo for fish shell utility functions.
+Utility functions for the fish shell.
 
-## reload
+## Installation
 
-Re-sources the target script into the active shell session. Useful to force reload functions you're currently working.
+```bash
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
-```fish
-reload [name]
+fisher install chvolkmann/fish-functions
 ```
-
-Where `name` is the name of a function in `~/.config/fish/functions` or a path relative to `~/.config/fish`. Supports tab completion.
